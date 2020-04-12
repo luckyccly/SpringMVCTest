@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    id="WebApp_ID" version="3.0">
+    <display-name>SpringMVCTest</display-name>
+
+    <!-- <servlet>...</servlet> 配置 Spring MVC DispatchcerServlet 前端控制器 -->
+    <!-- <init-param>...</init-param> 配置DispathcerServlet的一个初始化参数，
+    	 contextConfigLocation 是参数名称，param-value是该参数的值，该值为 Spring MVC 的配置文件路径 -->
+    <!-- 如果spring-config在src目录下，则param-value可以配置为classpath: springmvc-config.xml-->
+    <!-- load-on-startup 配置在 Web 应用启动时立即加载 Servlet -->
+    <servlet>
+        <servlet-name>springmvcDispathcerServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/springmvc-config.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <!-- Servlet 映射声明 -->
+    <!-- <url-pattern>/</url-pattern> 表示监听当前域的所有请求 -->
+    <servlet-mapping>
+        <servlet-name>springmvcDispathcerServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+    <!-- 添加 register.jsp 为首页 -->
+    <welcome-file-list>
+        <welcome-file>welcome.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
