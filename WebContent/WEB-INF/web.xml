@@ -20,7 +20,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     
-    <!-- Servlet 映射声明 -->
+    <!-- <servlet-mapping>是Servlet 映射声明 -->
     <!-- <url-pattern>/</url-pattern> 表示监听当前域的所有请求 -->
     <servlet-mapping>
         <servlet-name>springmvcDispathcerServlet</servlet-name>
